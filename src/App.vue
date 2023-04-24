@@ -1,0 +1,17 @@
+<script>
+
+export default {
+    data() {
+        title: "Hi Kik!"
+    }
+}
+
+</script>
+
+<template>
+    <h1>{{ title }}</h1>
+</template>
+
+<style lang="scss" scoped>
+
+</style>
