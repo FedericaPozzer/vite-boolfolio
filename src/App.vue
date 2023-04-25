@@ -8,17 +8,23 @@ export default {
     data() {
         return {
         title: "Projects",
-        projects: [],
+        projects: {
+            list: [],
+            pagination: [],
+            }
         };
     },
 
     components: { AppHeader, ProjectList },
 
     methods: {
-        fetchProjects() {
-            axios.get("http://127.0.0.1:8002/api/projects").then((response) => {
+        fetchProjects(endpoint = null) {
+            if (!endpoint) endpoint = "http://127.0.0.1:8002/api/projects";
+            
+            axios.get(endpoint).then((response) => {
                 // console.log(response);
-                this.projects = response.data;
+                this.projects.list = response.data.data;
+                this.projects.pagination = response.data.links;
             });
         },
     },
@@ -36,11 +42,8 @@ export default {
 
         <h1 class="my-5">{{ title }}</h1>
 
-        <ProjectList :projects="projects" ></ProjectList>
-        
-        <!-- <ul>
-            <li v-for="project in projects">{{ project.title }}</li>
-        </ul> -->
+        <ProjectList :projects="projects.list" :pagination="projects.pagination" @changePage="fetchProjects"></ProjectList>
+
     </div>
 </template>
 
