@@ -26,13 +26,13 @@ export default {
     </div>
 
     <!-- se non ci sono progetti -->
-    <div v-else class="text-muted">
-        There are no projects available!
+    <div v-else class="text-muted my-5">
+        There are no available projects <i class="bi bi-emoji-frown"></i>
     </div>
 
     <!-- paginazione -->
-    <div class="mt-auto pagination-custom">
-        <nav aria-label="Page Navigation" class="mt-3">
+    <div class="mt-auto pagination-custom" v-if="projects.length">
+        <nav aria-label="Page Navigation">
             <ul class="pagination">
                 <li class="page-item" v-for="page in pagination">
                     <button type="button" class="page-link" v-on:click="$emit('changePage', page.url)" v-bind:class="{disabled: !page.url, active: page.active}" v-html="page.label"></button>
@@ -50,6 +50,7 @@ export default {
 
 .pagination-custom {
 
+    // non mi ricordo quale è il modo giusto ma così funziona..
     ul {
 
         li > button { 

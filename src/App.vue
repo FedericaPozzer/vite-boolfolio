@@ -40,7 +40,7 @@ export default {
     <AppHeader></AppHeader>
     <div class="container">
 
-        <h1 class="my-5">{{ title }}</h1>
+        <h1 class="my-5">{{ title }} <i class="bi bi-flower3"></i> </h1>
 
         <ProjectList :projects="projects.list" :pagination="projects.pagination" @changePage="fetchProjects"></ProjectList>
 
@@ -48,5 +48,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+h1 {
+    color: pink;
+}
 
 </style>

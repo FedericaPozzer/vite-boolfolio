@@ -13,8 +13,8 @@ export default {
 <template>
 
     <div class="col d-flex">
-        <div class="card">
-            <div class="card-header d-flex">
+        <div class="card w-100">
+            <div class="card-header d-flex overflow-auto justify-content-between">
 
                 <!-- pill (il div esterno è perchè se no non resta a forma di pill, diventa tonda) -->
                 <div>
@@ -23,11 +23,15 @@ export default {
                     </div>
                 </div>
 
-                <!-- * NON VA (technologies)
-                    <div class="ms-3" v-for="technology in project.technologies" :key="project.id">
-                    Technologies: {{ technology.name }}                 
-                </div> -->
+                <!-- technologies -->
+                <div class="d-flex ms-2" v-if="project.technologies.length">Technology:
+                    <div class="badge ms-1" v-for="technology in project.technologies" :key="project.id" :style="{ 'background-color': technology.color }">
+                        {{ technology.name }}                 
+                    </div>
+                </div>
+                
             </div>
+
             <div class="card-body">
                 <h5 class="card-title"> {{ project.title }} </h5>
                 <p class="card-text"> <small> {{ project.text }} </small> </p>
