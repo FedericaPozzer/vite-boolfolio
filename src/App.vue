@@ -1,6 +1,8 @@
 <script>
 import axios from "axios";
+
 import AppHeader from "./components/appHeader.vue";
+import ProjectList from "./components/ProjectList.vue";
 
 export default {
     data() {
@@ -10,7 +12,7 @@ export default {
         };
     },
 
-    components: { AppHeader },
+    components: { AppHeader, ProjectList },
 
     methods: {
         fetchProjects() {
@@ -31,12 +33,14 @@ export default {
 <template>
     <AppHeader></AppHeader>
     <div class="container">
-        <h1 class="my-4">{{ title }}</h1>
 
-        <ul>
+        <h1 class="my-5">{{ title }}</h1>
+
+        <ProjectList :projects="projects" ></ProjectList>
+        
+        <!-- <ul>
             <li v-for="project in projects">{{ project.title }}</li>
-        </ul>
-
+        </ul> -->
     </div>
 </template>
 
