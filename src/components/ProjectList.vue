@@ -31,14 +31,12 @@ export default {
     </div>
 
     <!-- paginazione -->
-    <div class="mt-auto">
-        <nav aria-label="Page navigation example">
+    <div class="mt-auto pagination-custom">
+        <nav aria-label="Page Navigation" class="mt-3">
             <ul class="pagination">
-               
                 <li class="page-item" v-for="page in pagination">
                     <button type="button" class="page-link" v-on:click="$emit('changePage', page.url)" v-bind:class="{disabled: !page.url, active: page.active}" v-html="page.label"></button>
                 </li>
-
             </ul>
         </nav>
     </div>
@@ -49,5 +47,32 @@ export default {
 
 
 <style lang="scss">
+
+.pagination-custom {
+
+    ul {
+
+        li > button { 
+        color: pink;
+        }
+
+        .active {
+            background-color: pink;
+            // border: 1px solid pink;
+            border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+            color: black;
+        }
+
+        :focus {
+            // box-shadow: 0px 0px 10px pink;
+            box-shadow: none;
+        }
+
+        :hover {
+            color: rgb(229, 151, 164);
+        }
+
+    }   
+}
 
 </style>

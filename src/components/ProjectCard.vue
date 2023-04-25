@@ -16,20 +16,9 @@ export default {
         <div class="card">
             <div class="card-header d-flex">
 
+                <!-- pill (il div esterno è perchè se no non resta a forma di pill, diventa tonda) -->
                 <div>
-                    Type: {{ project.type.name }}
-                </div>
-                <!-- pill? non va il BG (se metto tipo red, funziona) -->
-                <div class="badge rounded-pill ms-3" style="background-color: {{ project.type.color }}">
-                    {{ project.type.name }}
-                </div>
-                <!-- nope nope nope -->
-                <div class="badge rounded-pill ms-3" :style="{ 'background-color': '{{ project.type.color }}' }">
-                    {{ project.type.name }}
-                </div>
-                <!-- YESSSS -->
-                <div>
-                    <div class="badge rounded-pill" :style="{ 'background-color': project.type.color }">
+                    <div class="badge rounded-pill me-3" :style="{ 'background-color': project.type.color }">
                     {{ project.type.name }}
                     </div>
                 </div>
@@ -41,7 +30,7 @@ export default {
             </div>
             <div class="card-body">
                 <h5 class="card-title"> {{ project.title }} </h5>
-                <p class="card-text"> {{ project.text }} </p>
+                <p class="card-text"> <small> {{ project.text }} </small> </p>
                 <!-- * BUTTON CHE SERVIRA' PER LA SHOW
                     <a href="" class="btn btn-primary">See Project</a> -->
             </div>
