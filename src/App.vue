@@ -47,7 +47,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 h1 {
     color: pink;

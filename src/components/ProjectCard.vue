@@ -25,6 +25,7 @@ export default {
 
                 <!-- technologies -->
                 <div class="d-flex ms-2" v-if="project.technologies.length">Technology:
+                    <!-- TODO: key tech id e non proj id -->
                     <div class="badge ms-1" v-for="technology in project.technologies" :key="project.id" :style="{ 'background-color': technology.color }">
                         {{ technology.name }}                 
                     </div>
