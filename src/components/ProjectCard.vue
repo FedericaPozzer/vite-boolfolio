@@ -40,13 +40,13 @@ export default {
                 <!-- "see project" button / "back to the list" button -->
                 <div>
                     <div v-if="!isDetail">
-                        <router-link class="btn btn-sm mx-2 btn-see" :to="{name: 'project-detail', params: {'id': project.id}}">
+                        <router-link class="btn btn-sm mx-2 btn-see" :to="{name: 'project-detail', params: {slug: project.slug}}">
                             See Project
                         </router-link>
                     </div>
 
                     <div v-else="isDetail">
-                        <router-link class="btn btn-sm mx-2 btn-see" :to="{ name: 'home', params: { 'id': project.id } }">
+                        <router-link class="btn btn-sm mx-2 btn-see" :to="{ name: 'home', params: {slug: project.slug } }">
                             Back to Projects List
                         </router-link>
                     </div>
