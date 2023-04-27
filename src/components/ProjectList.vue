@@ -16,6 +16,9 @@ export default {
 
 <template>
 
+<h1 class="my-5">Projects List <i class="bi bi-flower3"></i> </h1>
+
+
 <!-- * K! Attenzione a questa height orrenda (però così la paginazione resta sul fondo anche quando ho poche cards) -->
 <div class="d-flex flex-column" style="height: 70vh;">
 

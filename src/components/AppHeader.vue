@@ -1,18 +1,20 @@
 <script>
+import { stringifyQuery } from 'vue-router';
+
 export default {
-    data() {
-        return {
-        name: "AppHeader"
-        }
+    name: "AppHeader",
+
+    props: {
+        title: String,
     }
-}
+};
 </script>
 
 <template>
     
     <nav class="navbar bg-body-tertiary">
         <div class="container">
-            <span class="navbar-brand mb-0 h1">Boolpress</span>
+            <span class="navbar-brand mb-0 h1">{{ title }}</span>
 
             <div class="d-flex">
                 <router-link :to="{name: 'home'}" class="nav-link mx-2">

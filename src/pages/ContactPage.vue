@@ -12,8 +12,8 @@ export default {
 
 <template>
 
-    <h3>Contacts</h3>
-
+<h1 class="my-5">Contacts <i class="bi bi-flower3"></i> </h1>
+    
 </template>
 
 
