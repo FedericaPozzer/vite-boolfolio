@@ -37,6 +37,10 @@ export default {
         span {
             color: rgb(217, 114, 131);
         }
+
+        .active, :hover {
+            color: rgb(217, 114, 131);
+        }
     }
 
 </style>

@@ -22,7 +22,7 @@ export default {
 <!-- * K! Attenzione a questa height orrenda (però così la paginazione resta sul fondo anche quando ho poche cards) -->
 <div class="d-flex flex-column" style="height: 70vh;">
 
-    <div class="row row-cols-3 gy-5" v-if="projects.length">
+    <div class="row row-cols-3 gy-2" v-if="projects.length">
 
         <ProjectCard v-for="project in projects" :key="project.id" :project="project"></ProjectCard>
 

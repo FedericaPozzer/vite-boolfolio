@@ -31,16 +31,18 @@ export default {
             </div>
 
             <div class="card-body">
-                <h4 class="card-title my-2"> {{ project.title }} </h4>
-                <!-- <p class="card-text"> <small> {{ project.text }} </small> </p> -->
+                <h4 class="card-title"> {{ project.title }} </h4>
                 <p class="card-text"> <small> {{ abstract }} </small> </p>
-                <!-- * BUTTON CHE SERVIRA' PER LA SHOW
-                    <a href="" class="btn btn-primary">See Project</a> -->
             </div>
 
-            <div class="card-footer" v-if="project.technologies.length">
+            <div class="card-footer d-flex justify-content-between">
+                <!-- "see project" button -->
+                <router-link class="btn btn-sm mx-2 btn-see" :to="{name: 'project-detail', params: {'id': project.id}}">
+                    See Project
+                </router-link>
+
                 <!-- technologies -->
-                <div class="d-flex justify-content-end" >Tech:
+                <div v-if="project.technologies.length">Tech:
                     <div class="badge ms-1" v-for="technology in project.technologies" :key="technology.id" :style="{ 'background-color': technology.color }">
                         {{ technology.name }}                 
                     </div>
@@ -49,13 +51,19 @@ export default {
         </div>
     </div>
 
-    <!-- <ul>
-        <li>{{ project.title }}</li>
-    </ul> -->
-
 </template>
 
 
 <style lang="scss">
+
+.btn-see {
+    color: pink !important;
+    border: 1px solid pink !important;
+}
+
+.btn-see:hover {
+    color: rgb(229, 151, 164) !important;
+    border: 1px solid rgb(229, 151, 164) !important;
+}
 
 </style>
