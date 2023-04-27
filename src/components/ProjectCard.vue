@@ -31,7 +31,7 @@ export default {
             </div>
 
             <div class="card-body">
-                <h5 class="card-title"> {{ project.title }} </h5>
+                <h4 class="card-title my-2"> {{ project.title }} </h4>
                 <!-- <p class="card-text"> <small> {{ project.text }} </small> </p> -->
                 <p class="card-text"> <small> {{ abstract }} </small> </p>
                 <!-- * BUTTON CHE SERVIRA' PER LA SHOW

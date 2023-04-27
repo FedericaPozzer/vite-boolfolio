@@ -13,9 +13,28 @@ export default {
     <nav class="navbar bg-body-tertiary">
         <div class="container">
             <span class="navbar-brand mb-0 h1">Boolpress</span>
+
+            <div class="d-flex">
+                <router-link :to="{name: 'home'}" class="nav-link mx-2">
+                    Homepage
+                </router-link>
+
+                <router-link :to="{ name: 'contacts' }" class="nav-link mx-2">
+                    Contacts
+                </router-link>
+            </div>
         </div>
     </nav>
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .navbar {
+        color: pink;
+
+        span {
+            color: rgb(217, 114, 131);
+        }
+    }
+
+</style>
