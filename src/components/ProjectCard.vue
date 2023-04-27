@@ -2,8 +2,15 @@
 
 export default {
     name: "Project card",
+    
     props: {
         project: Object,
+    },
+
+    computed: {
+        abstract() {
+            return this.project.text.slice(0, 50) + ".."; //da dove parto, quanti caratteri voglio
+        }
     },
 }
 
@@ -25,8 +32,7 @@ export default {
 
                 <!-- technologies -->
                 <div class="d-flex ms-2" v-if="project.technologies.length">Technology:
-                    <!-- TODO: key tech id e non proj id -->
-                    <div class="badge ms-1" v-for="technology in project.technologies" :key="project.id" :style="{ 'background-color': technology.color }">
+                    <div class="badge ms-1" v-for="technology in project.technologies" :key="technology.id" :style="{ 'background-color': technology.color }">
                         {{ technology.name }}                 
                     </div>
                 </div>
@@ -35,7 +41,8 @@ export default {
 
             <div class="card-body">
                 <h5 class="card-title"> {{ project.title }} </h5>
-                <p class="card-text"> <small> {{ project.text }} </small> </p>
+                <!-- <p class="card-text"> <small> {{ project.text }} </small> </p> -->
+                <p class="card-text"> <small> {{ abstract }} </small> </p>
                 <!-- * BUTTON CHE SERVIRA' PER LA SHOW
                     <a href="" class="btn btn-primary">See Project</a> -->
             </div>
