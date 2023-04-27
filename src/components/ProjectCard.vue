@@ -5,6 +5,7 @@ export default {
 
     props: {
         project: Object,
+        isDetail: Boolean,
     },
 
     computed: {
@@ -32,14 +33,25 @@ export default {
 
             <div class="card-body">
                 <h4 class="card-title"> {{ project.title }} </h4>
-                <p class="card-text"> <small> {{ abstract }} </small> </p>
+                <p class="card-text"> <small> {{ isDetail? project.text : abstract }} </small> </p>
             </div>
 
             <div class="card-footer d-flex justify-content-between">
-                <!-- "see project" button -->
-                <router-link class="btn btn-sm mx-2 btn-see" :to="{name: 'project-detail', params: {'id': project.id}}">
-                    See Project
-                </router-link>
+                <!-- "see project" button / "back to the list" button -->
+                <div>
+                    <div v-if="!isDetail">
+                        <router-link class="btn btn-sm mx-2 btn-see" :to="{name: 'project-detail', params: {'id': project.id}}">
+                            See Project
+                        </router-link>
+                    </div>
+
+                    <div v-else="isDetail">
+                        <router-link class="btn btn-sm mx-2 btn-see" :to="{ name: 'home', params: { 'id': project.id } }">
+                            Back to Projects List
+                        </router-link>
+                    </div>
+                </div>
+
 
                 <!-- technologies -->
                 <div v-if="project.technologies.length">Tech:

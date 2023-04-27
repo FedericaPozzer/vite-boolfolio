@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-// import ProjectCard from '../components/ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
     name: "DetailProjectPage",
@@ -10,7 +10,7 @@ export default {
             project: null,
         };
     },
-    // components: { ProjectCard },
+    components: { ProjectCard },
 
     created() {
         // console.log(this.$route.params.id);
@@ -26,6 +26,8 @@ export default {
 <template>
 
     <h1 class="my-5">Project Detail <i class="bi bi-flower3"></i> {{ project.title }} </h1>
+
+    <ProjectCard v-if="project" :project="project" :isDetail="true"></ProjectCard>
 
 </template>
 

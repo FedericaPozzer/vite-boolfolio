@@ -24,7 +24,7 @@ export default {
 
     <div class="row row-cols-3 gy-2" v-if="projects.length">
 
-        <ProjectCard v-for="project in projects" :key="project.id" :project="project"></ProjectCard>
+        <ProjectCard v-for="project in projects" :key="project.id" :project="project" :isDetail="false"></ProjectCard>
 
     </div>
 
